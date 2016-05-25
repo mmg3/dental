@@ -1,0 +1,210 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/templates/admin_template.xhtml">
+	<ui:define name="contenido">
+		<!-- Imagen de carga de actividad de pagina -->
+		<p:ajaxStatus
+			style="width:64px;height:64px;position:fixed;right:5px;bottom:5px">
+			<f:facet name="start">
+				<p:graphicImage value="/imagenes/ajax-loadercircle.gif" />
+			</f:facet>
+
+			<f:facet name="complete">
+				<h:outputText value="" />
+			</f:facet>
+		</p:ajaxStatus>
+			
+		<h:form id="formCliente">
+			<p:panel>
+				<p:panelGrid columns="2" id="panelPadre" style="width:100%">
+					<p:panelGrid columns="2" style="width:100%">
+						<h:outputText value="Historia # " />
+						<p:row><p:inputText value="#{controladorCliente.cliente.nhistoria}"
+							style="width: 75%;"></p:inputText>
+						<p:commandButton value="Buscar" style="width: 23%;"
+									action="#{controladorCliente.buscaClientexHistoria}"
+									update=":formCliente:panelPadre" icon="ui-icon-disk"></p:commandButton></p:row>
+						<h:outputText value="Identificación " />
+						<p:row><p:inputText value="#{controladorCliente.cliente.identificacion}" style="width: 75%;"></p:inputText>
+						<p:commandButton value="Buscar" style="width: 23%;"
+									action="#{controladorCliente.buscaClientexIdentificacion}"
+									update=":formCliente" icon="ui-icon-disk"></p:commandButton></p:row>
+						
+						<h:outputText value="Paciente" />
+						<p:row>
+						<p:inputText value="#{controladorCliente.cliente.apellido}" style="width: 45%;"></p:inputText>
+						<p:inputText value="#{controladorCliente.cliente.nombre}" style="width: 45%;"></p:inputText>
+						</p:row>
+					</p:panelGrid>
+					<!-- <h:graphicImage value="#{controladorCliente.cliente.foto}" class="user-image" alt="User Image" style="width:20%;"/> -->
+					
+			</p:panelGrid>
+			</p:panel>
+		</h:form>
+		<h:form id="formConsulta">
+			<p:panel>
+				<p:tabView>
+			        <p:tab title="Generalidades">
+			            	<h:panelGrid columns="1" cellpadding="10" id="panelizquierdo" style="width: 98%;">
+				                <h:outputText value="Motivo de Consulta" />
+				                <p:inputTextarea rows="2" value="" style="width: 98%;"></p:inputTextarea>
+				                <h:outputText value="Problema actual (Enfermedad)" />
+				                <p:inputTextarea rows="2" value="" style="width: 98%;"></p:inputTextarea>
+				                <h:outputText value="Antecedentes" />
+				                <h:outputText value="Signos Vitales" />
+							</h:panelGrid>
+							
+							<center><h1><h:outputText value="EXÁMEN SISTEMA ESTOMATOGNATICO" /></h1></center>
+							<h:panelGrid columns="3" cellpadding="10" id="panelDerecho" style="width: 98%;">
+				                <h:outputText value="Labios" />
+				                <h:outputText value="Mejilla" />
+				                <h:outputText value="Maxilar Superior" />
+				                <p:inputTextarea rows="2" value="" style="width: 98%;"></p:inputTextarea>
+				                <p:inputTextarea rows="2" value="" style="width: 98%;"></p:inputTextarea>
+				                <p:inputTextarea rows="2" value="" style="width: 98%;"></p:inputTextarea>
+				                <h:outputText value="Maxilar inferior" />
+				                <h:outputText value="Lengua" />
+				                <h:outputText value="Paladar" />
+				                <p:inputTextarea rows="2" value="" style="width: 98%;"></p:inputTextarea>
+				                <p:inputTextarea rows="2" value="" style="width: 98%;"></p:inputTextarea>
+				                <p:inputTextarea rows="2" value="" style="width: 98%;"></p:inputTextarea>
+				                <h:outputText value="Piso" />
+				                <h:outputText value="Carrillos" />
+				                <h:outputText value="Glándulas Salivales" />
+				                <p:inputTextarea rows="2" value="" style="width: 98%;"></p:inputTextarea>
+				                <p:inputTextarea rows="2" value="" style="width: 98%;"></p:inputTextarea>
+				                <p:inputTextarea rows="2" value="" style="width: 98%;"></p:inputTextarea>
+				                <h:outputText value="Oro faringe" />
+				                <h:outputText value="A.T.M." />
+				                <h:outputText value="Ganglios" />
+				                <p:inputTextarea rows="2" value="" style="width: 98%;"></p:inputTextarea>
+				                <p:inputTextarea rows="2" value="" style="width: 98%;"></p:inputTextarea>
+				                <p:inputTextarea rows="2" value="" style="width: 98%;"></p:inputTextarea>
+							</h:panelGrid> 
+			        </p:tab>
+			        <p:tab title="Odontograma">
+			            <h:panelGrid columns="2" cellpadding="10">
+			                <h:outputText value="Francis Ford Coppola's legendary..." />
+			            </h:panelGrid>
+			        </p:tab>
+			        <p:tab title="Indicadores de salud bucal">
+			            <h:panelGrid columns="3" style="width:100%">
+			                <h:panelGrid style="width:100%; text-align: center" columns="1" >
+			                	<h:outputLabel value="Higiene Oral Simplificada" />
+			                	<h:outputLabel value="Piezas Dentales" />
+			                	
+			                	<h:panelGrid style="text-align: center" columns="6" >
+				                	<h:outputLabel value="16" />
+				                	<p:inputText></p:inputText>
+				                	<h:outputLabel value="17" />
+				                	<p:inputText></p:inputText>
+				                	<h:outputLabel value="55" />
+				                	<p:inputText></p:inputText>
+				                	
+				                	<h:outputLabel value="11" />
+				                	<p:inputText></p:inputText>
+				                	<h:outputLabel value="21" />
+				                	<p:inputText></p:inputText>
+				                	<h:outputLabel value="51" />
+				                	<p:inputText></p:inputText>
+				                	
+				                	<h:outputLabel value="26" />
+				                	<p:inputText></p:inputText>
+				                	<h:outputLabel value="27" />
+				                	<p:inputText></p:inputText>
+				                	<h:outputLabel value="65" />
+				                	<p:inputText></p:inputText>
+				                	
+				                	<h:outputLabel value="36" />
+				                	<p:inputText></p:inputText>
+				                	<h:outputLabel value="37" />
+				                	<p:inputText></p:inputText>
+				                	<h:outputLabel value="75" />
+				                	<p:inputText></p:inputText>
+				                	
+				                	<h:outputLabel value="31" />
+				                	<p:inputText></p:inputText>
+				                	<h:outputLabel value="41" />
+				                	<p:inputText></p:inputText>
+				                	<h:outputLabel value="71" />
+				                	<p:inputText></p:inputText>
+				                	
+				                	<h:outputLabel value="46" />
+				                	<p:inputText></p:inputText>
+				                	<h:outputLabel value="47" />
+				                	<p:inputText></p:inputText>
+				                	<h:outputLabel value="85" />
+				                	<p:inputText></p:inputText>
+			                	</h:panelGrid>
+			                </h:panelGrid>
+			                <h:panelGrid columns="3">
+			                	<h:outputLabel value="Placa" />
+			                	<h:outputLabel value="Cálculo" />
+			                	<h:outputLabel value="Gingivitis" />
+			                	
+			                	<h:outputLabel value="0-1-2-3" />
+			                	<h:outputLabel value="0-1-2-3" />
+			                	<h:outputLabel value="0-1" />
+			                	
+			                	<p:inputText></p:inputText>
+			                	<p:inputText></p:inputText>
+			                	<p:inputText></p:inputText>
+			                	
+			                	<p:inputText></p:inputText>
+			                	<p:inputText></p:inputText>
+			                	<p:inputText></p:inputText>
+			                	
+			                	<p:inputText></p:inputText>
+			                	<p:inputText></p:inputText>
+			                	<p:inputText></p:inputText>
+			                	
+			                	<p:inputText></p:inputText>
+			                	<p:inputText></p:inputText>
+			                	<p:inputText></p:inputText>
+			                	
+			                	<p:inputText></p:inputText>
+			                	<p:inputText></p:inputText>
+			                	<p:inputText></p:inputText>
+			                	
+			                	<p:inputText></p:inputText>
+			                	<p:inputText></p:inputText>
+			                	<p:inputText></p:inputText>
+			                	
+			                	<h:outputLabel value="Totales" />
+			                	<h:outputLabel value=" " />
+			                	<h:outputLabel value=" " />
+			                	
+			                	<p:inputText></p:inputText>
+			                	<p:inputText></p:inputText>
+			                	<p:inputText></p:inputText>
+			                </h:panelGrid>
+			                <h:panelGrid style="text-align: center" columns="6" >
+			                	<h:outputLabel value="Enfermedad" />
+			                	<h:outputLabel value=" Periodontal" />
+			                	
+			                	<h:outputLabel value="Mal" />
+			                	<h:outputLabel value=" ocusión" />
+			                	
+			                	<h:outputLabel value="Fluorosis" />
+			                	<h:outputLabel value=" " />
+			                </h:panelGrid>
+			            </h:panelGrid>
+			        </p:tab>
+			        <p:tab title="Diagnóstico y tratamiento">
+			            <h:panelGrid columns="2" cellpadding="10">
+			                <h:outputText value="After a break of more than 15 years..." />
+			            </h:panelGrid>
+			        </p:tab>
+			    </p:tabView>
+			</p:panel>
+		</h:form>
+	</ui:define>
+	<ui:define name="tituloFormulario">Cliente</ui:define>
+	<ui:define name="subtituloFormulario">Ingrese la información solicitada</ui:define>
+</ui:composition>
+</html>

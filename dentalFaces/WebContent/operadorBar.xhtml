@@ -1,0 +1,40 @@
+﻿<ui:composition
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui" >
+    <h:form> 
+		    <p:growl id="messages"/>
+		 
+		    <p:menubar>
+		        <p:menuitem value="Inicio" icon="ui-icon-home" url="/operador.jsf"></p:menuitem>
+		 
+		        <p:submenu label="Tareas" icon="ui-icon-document">
+		            <p:menuitem value="Nueva" url="solicitud.jsf" icon="ui-icon-comment" />
+		            <p:menuitem value="Editar" url="editaSolicitud.jsf" icon="ui-icon-document-b" />
+		        </p:submenu>
+		 
+		        <p:submenu label="Reportes" icon="ui-icon-bookmark">
+		            <p:submenu label="Tareas" icon="ui-icon-bookmark">
+			            <p:menuitem value="Reporte General" url="reporteTareas.jsf" icon="ui-icon-pencil" />
+			            <p:menuitem value="Estadísticas" url="estadisticaTareas.jsf" icon="ui-icon-pencil" />
+			        </p:submenu>
+			        <p:submenu label="Cronog. Operativo" icon="ui-icon-bookmark">
+			            <p:menuitem value="Reporte General" url="reporteCronograma.jsf" icon="ui-icon-pencil" />
+			            <p:menuitem value="Estadísticas" url="estadisticaCronograma.jsf" icon="ui-icon-pencil" />
+			        </p:submenu>
+			        <p:submenu label="Consolidado" icon="ui-icon-bookmark">
+			            <p:menuitem value="Reporte Consolidado" url="reporteConsolidado.jsf" icon="ui-icon-pencil" />
+			            <p:menuitem value="Estadísticas" url="estadisticaConsolidado.jsf" icon="ui-icon-pencil" />
+			        </p:submenu>
+		        </p:submenu>
+		 
+		        <p:submenu label="Panel Usuario" icon="ui-icon-contact">
+		            <p:menuitem value="Editar" url="usuarios.jsf" icon="ui-icon-person" />
+		        </p:submenu>
+		 
+		        <p:menuitem value="Cerrar Sesión" url="./" icon="ui-icon-power" />
+		    </p:menubar>
+		</h:form>
+</ui:composition>

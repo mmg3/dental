@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui" >
+
+	<ui:composition template="/templates/login_template.xhtml">
+	<ui:define name="contenido">
+		<h:form id="formulario">
+		<p:growl autoUpdate="true"></p:growl>
+				<h1>Login</h1>
+					<p:inputText styleClass="inputField" value="#{controladorUsuario.nombreUsuario}" placeholder="Usuario" required="required"></p:inputText>
+					<p:password styleClass="inputField" value="#{controladorUsuario.claveUsuario}" placeholder="Contraseña" required="required"></p:password>
+				
+				<p:commandButton ajax="false" class="btn btn-primary btn-block btn-large" value="Ingresar" action="#{controladorUsuario.validaUsuario}" update=":formulario:panel">
+				</p:commandButton>
+		</h:form>
+	</ui:define>
+	<ui:define name="tituloFormulario">Inicio de Sesión</ui:define>
+</ui:composition>
+</html>

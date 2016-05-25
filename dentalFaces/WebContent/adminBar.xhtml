@@ -1,0 +1,46 @@
+﻿<ui:composition
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui" >
+		<section class="sidebar">
+          <!-- Sidebar Menu -->
+          <ul class="sidebar-menu">
+            <li class="header">Menú</li>
+            <li class="active"><a href="maina.jsf"><i class="fa fa-link"></i> <span>Inicio</span></a></li>
+            <li><a href="nuevoCliente.jsf"><i class="fa fa-link"></i> <span>Cientes</span></a></li>
+            <li class="treeview">
+              <a href="#"><i class="fa fa-link"></i> <span>Consultas</span> <i class="fa fa-angle-left pull-right"></i></a>
+              <ul class="treeview-menu">
+                <li><a href="consulta.jsf">Consulta</a></li>
+                <li><a href="#">Tratamiento</a></li>
+              </ul>
+            </li>
+            <li class="treeview">
+              <a href="#"><i class="fa fa-link"></i> <span>Cuentas</span> <i class="fa fa-angle-left pull-right"></i></a>
+              <ul class="treeview-menu">
+                <li><a href="#">Ingresos</a></li>
+                <li><a href="#">Gastos</a></li>
+              </ul>
+            </li>
+            <li class="treeview">
+              <a href="#"><i class="fa fa-link"></i> <span>Reportes</span> <i class="fa fa-angle-left pull-right"></i></a>
+              <ul class="treeview-menu">
+                <li><a href="#">General</a></li>
+                <li><a href="#">Cobros pendientes</a></li>
+                <li><a href="#">Cuadre caja</a></li>
+                <li><a href="#">Estadísticas</a></li>
+                <li><a href="#">Listado Clientes</a></li>
+              </ul>
+            </li>
+            <!-- <li class="treeview">
+              <a href="#"><i class="fa fa-link"></i> <span>Panel Usuario</span> <i class="fa fa-angle-left pull-right"></i></a>
+              <ul class="treeview-menu">
+                <li><a href="#">Editar Usuario</a></li>
+              </ul>
+            </li> -->
+            <!-- <li class="active"><a href="#{controladorUsuario.logOut}" ><i class="fa fa-link"></i> <span>Cerrar Sesión</span></a></li> -->
+          </ul><!-- /.sidebar-menu -->
+        </section>
+</ui:composition>
