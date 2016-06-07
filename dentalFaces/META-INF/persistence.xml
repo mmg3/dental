@@ -15,6 +15,7 @@
 		<class>entidades.Telefono</class>
 		<class>entidades.Tratamiento</class>
 		<class>entidades.Usuario</class>
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
 		<properties>
 			<property name="hibernate.dialect" value="org.hibernate.dialect.Oracle10gDialect"/>
 			<property name="hibernate.show_sql" value="true" />
